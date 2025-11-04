@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Health Event - Monobondhu</title>
+  <link rel="stylesheet" href="../cssFiles/events.css">
+  <link rel="stylesheet" href="../cssFiles/common.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-title"><a href="index.html">সেবা</a></h1>
+  </header>
+
+  <main>
+    <div class="form-header">
+      <h1>সূচি</h1>
+      <p>গ্রামে ও শহরে স্বাস্থ্য সচেতনতার বিশেষ আয়োজন।</p>
+    </div>
+
+    
+    <div class="filter-section">
+      <label for="districtSelect">জেলা নির্বাচন করুন:</label>
+      <select id="districtSelect">
+        <option value="all">সব জেলা</option>
+        <option value="rajshahi">রাজশাহী</option>
+        <option value="khulna">খুলনা</option>
+        <option value="dhaka">ঢাকা</option>
+        <option value="chittagong">চট্টগ্রাম</option>
+      </select>
+    </div>
+
+    <div class="events-grid" id="eventsGrid">
+      
+      <div class="event-card" data-district="rajshahi">
+        <h3>ফ্রি ডায়াবেটিস চেকআপ ক্যাম্প</h3>
+        <p><strong>তারিখ:</strong> ১৫ নভেম্বর, ২০২৫ | সকাল ৯টা - দুপুর ১টা</p>
+        <p><strong>স্থান:</strong> রাজশাহী সরকারি প্রাথমিক বিদ্যালয় মাঠ</p>
+        <p><strong>আয়োজক:</strong> রাজশাহী সিটি কর্পোরেশন</p>
+        <p><strong>যোগাযোগ:</strong> 01755-223344</p>
+        <p class="details">ফ্রি ব্লাড সুগার টেস্ট, ডাক্তারের পরামর্শ।</p>
+        <button class="join-btn" data-event="ফ্রি ডায়াবেটিস চেকআপ ক্যাম্প">যোগ দিন</button>
+      </div>
+
+      
+      <div class="event-card" data-district="khulna">
+        <h3>শিশু টিকা ক্যাম্প</h3>
+        <p><strong>তারিখ:</strong> ২২ নভেম্বর, ২০২৫ | সকাল ১০টা - বিকেল ৪টা</p>
+        <p><strong>স্থান:</strong> খুলনা উপজেলা স্বাস্থ্য কমপ্লেক্স</p>
+        <p><strong>আয়োজক:</strong> স্বাস্থ্য অধিদপ্তর, খুলনা</p>
+        <p><strong>যোগাযোগ:</strong> 01999-667788</p>
+        <p class="details">BCG, DPT, Polio, Measles টিকা ফ্রি।</p>
+        <button class="join-btn" data-event="শিশু টিকা ক্যাম্প">যোগ দিন</button>
+      </div>
+
+      
+      <div class="event-card" data-district="dhaka">
+        <h3>মানসিক স্বাস্থ্য সচেতনতা কর্মশালা</h3>
+        <p><strong>তারিখ:</strong> ২৮ নভেম্বর, ২০২৫ | বিকেল ৩টা - ৫টা</p>
+        <p><strong>স্থান:</strong> ঢাকা কমিউনিটি হল, মিরপুর</p>
+        <p><strong>আয়োজক:</strong> মনোবন্ধু ও BRAC</p>
+        <p><strong>যোগাযোগ:</strong> 01678-112233</p>
+        <p class="details">স্ট্রেস ম্যানেজমেন্ট, ফ্রি কাউন্সেলিং।</p>
+        <button class="join-btn" data-event="মানসিক স্বাস্থ্য সচেতনতা কর্মশালা">যোগ দিন</button>
+      </div>
+
+      
+      <div class="event-card" data-district="chittagong">
+        <h3>মা ও শিশু স্বাস্থ্য মেলা</h3>
+        <p><strong>তারিখ:</strong> ৫ ডিসেম্বর, ২০২৫ | সকাল ৮টা - দুপুর ২টা</p>
+        <p><strong>স্থান:</strong> চট্টগ্রাম মেডিকেল কলেজ মাঠ</p>
+        <p><strong>আয়োজক:</strong> UNICEF ও স্থানীয় স্বাস্থ্য বিভাগ</p>
+        <p><strong>যোগাযোগ:</strong> 01888-445566</p>
+        <p class="details">প্রসবপূর্ব পরীক্ষা, শিশু পুষ্টি।</p>
+        <button class="join-btn" data-event="মা ও শিশু স্বাস্থ্য মেলা">যোগ দিন</button>
+      </div>
+    </div>
+
+    
+    <div id="joinModal" class="modal">
+      <div class="modal-content">
+        <p id="modalMessage"></p>
+      </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> সেবা— তোমার সাথী</p>
+  </footer>
+
+  <script src="events.js"></script>
+</body>
+</html>

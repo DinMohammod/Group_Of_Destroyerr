@@ -1,0 +1,148 @@
+:root {
+  --bg1: #f6fbff;
+  --bg2: #e8f4ff;
+  --accent: #6aa6ff;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --radius: 14px;
+  --max-width: 1100px;
+  --page-padding: 24px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', 'Noto Sans Bengali', Roboto, Arial, sans-serif;
+  background: #e8f4ff;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: cover;
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom: 100px; */
+}
+
+
+
+.form-header {
+  background-color: #00a884;
+  color: white;
+  text-align: center;
+  padding: 24px 12px;
+}
+
+
+.form-header h1 {
+  font-size: clamp(20px, 4vw, 28px);
+  margin-bottom: 6px;
+}
+
+.form-header p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+
+main {
+  width: 90%;
+  max-width: 700px;
+  margin: 25px auto;
+  background: white;
+  padding: 26px 24px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+input[type="radio"] {
+  margin-left: 10px;
+  margin-right: 4px;
+  accent-color: #00a884;
+  transform: scale(1.1);
+}
+
+button {
+  background-color: #00a884;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #008a70;
+}
+
+#result {
+  margin-top: 24px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+
+@media (max-width: 768px) {
+  main {
+    width: 95%;
+    padding: 20px 16px;
+  }
+
+  li {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  input[type="radio"] {
+    transform: scale(1);
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 8px;
+  }
+
+  .form-header h1 {
+    font-size: 20px;
+  }
+
+  li {
+    line-height: 1.5;
+  }
+
+  input[type="radio"] {
+    display: inline-block;
+    margin: 6px 6px 0 0;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
+}

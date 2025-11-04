@@ -1,0 +1,118 @@
+:root{
+  --bg1: #f6fbff;
+  --bg2: #e8f4ff;
+  --accent: #6aa6ff;
+  --muted: #6b7280;
+  --radius: 14px;
+  --max-width: 700px;
+  --page-padding: 24px;
+}
+
+html,body{height:100%;}
+body{
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #e8f4ff;
+  color:#0f172a;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:0px 12px;
+}
+
+
+
+main{
+  width:100%;
+  max-width:var(--max-width);
+  background: white;
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  margin-top: 20px;
+}
+
+.form-header{
+  background-color:#00a884;
+  color:white;
+  text-align:center;
+  padding:20px 0;
+}
+
+.form-header .icon{
+  font-size: 24px; 
+}
+
+
+.search-section{
+  margin: 20px 0;
+}
+
+.search-section label{
+  display:block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.search-section select{
+  width: 100%;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:14px;
+  background: white;
+  outline: none;
+}
+
+#checkBtn{
+  padding:10px 20px;
+  background-color:#00a884;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:16px;
+  width: 100%;
+}
+
+#checkBtn:hover{
+  background-color:#008a70;
+}
+
+
+.result-section{
+  background-color: #e8f5e8; 
+  border: 1px solid #00a884;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.result-section h3{
+  color: #00a884;
+  margin-bottom: 15px;
+}
+
+#symptomsList ul{
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+#symptomsList li{
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.disclaimer{
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+
+@media (max-width: 560px) {
+  main { padding: 16px; }
+}

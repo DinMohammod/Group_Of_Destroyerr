@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Data - Monobondhu</title>
+  <link rel="stylesheet" href="../cssFiles/datas.css">
+  <link rel="stylesheet" href="../cssFiles/common.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-title"><a href="index.html">সেবা</a></h1>
+  </header>
+
+  <main>
+    <div class="form-header">
+      <h1>তথ্য প্যানেল</h1>
+      <p>সাইটের অ্যানালিটিক্স এবং গ্রামের স্বাস্থ্য তথ্য সামারি (আপডেট: ০৪ নভেম্বর ২০২৫)।</p>
+    </div>
+
+    
+    <section class="stats-section">
+      <h2>ভিজিটর ডেমোগ্রাফিক্স</h2>
+      <div class="chart-container">
+        <canvas id="genderChart"></canvas>
+      </div>
+      <p class="chart-caption">মেল/ফিমেল ভিজিটর (টোটাল: ৫২৩৪)</p>
+    </section>
+
+    
+    <section class="stats-section">
+      <h2>সার্ভিস টপিক ভিউস</h2>
+      <div class="chart-container">
+        <canvas id="topicChart"></canvas>
+      </div>
+      <p class="chart-caption">সবচেয়ে বেশি দেখা সার্ভিস (মাসিক)</p>
+    </section>
+
+    
+    <section class="stats-section">
+      <h2>ভলান্টিয়ার স্ট্যাটস</h2>
+      <div class="stats-cards">
+        <div class="stat-card">
+          <h3>২৮</h3>
+          <p>সক্রিয় ভলান্টিয়ার</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 70%;"></div>
+          </div>
+          <span>৭০% সক্রিয়</span>
+        </div>
+        <div class="stat-card">
+          <h3>১৫২</h3>
+          <p>সহযোগিতা নেওয়া</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 45%;"></div>
+          </div>
+          <span>৪৫% গ্রোথ</span>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="stats-section">
+      <h2>ইউজার স্যাটিসফ্যাকশন</h2>
+      <div class="chart-container">
+        <canvas id="satisfactionChart"></canvas>
+      </div>
+      <div class="feedback-list">
+        <h3>সাম্প্রতিক ফিডব্যাক</h3>
+        <ul>
+          <li>"সাইটটা খুবই উপকারী! টিকা ট্র্যাকার সেরা।" — রহিমা, ঢাকা</li>
+          <li>"ভলান্টিয়ার খুঁজে পাওয়া সহজ হয়েছে।" — সাইফুল, রাজশাহী</li>
+          <li>"আরও লোকাল হেলথ ইভেন্ট যোগ করুন।" — নীলিমা, খুলনা</li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <section class="stats-section">
+      <h2>গ্রামের স্বাস্থ্য ডাটা সামারি</h2>
+      <div class="chart-container">
+        <canvas id="healthChart"></canvas>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ক্যাটাগরি</th>
+            <th>টোটাল</th>
+            <th>স্বাস্থ্যকর</th>
+            <th>ঝুঁকিপূর্ণ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>টিকা (শিশু)</td>
+            <td>১২৫০</td>
+            <td>৯৫০</td>
+            <td>৩০০</td>
+          </tr>
+          <tr>
+            <td>ওজন (প্রাপ্তবয়স্ক)</td>
+            <td>৮৭৬</td>
+            <td>৬৫৪</td>
+            <td>২২২</td>
+          </tr>
+          <tr>
+            <td>রোগ ইতিহাস (ডায়াবেটিস)</td>
+            <td>৪৫৬</td>
+            <td>২৮৯</td>
+            <td>১৬৭</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    
+    <section class="stats-section">
+      <h2>মাসিক গ্রোথ</h2>
+      <div class="chart-container">
+        <canvas id="growthChart"></canvas>
+      </div>
+      <p class="chart-caption">সাইট ভিজিটস (অক্টোবর-নভেম্বর ২০২৫)</p>
+    </section>
+
+    <div id="notification" class="notification"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> সেবা— তোমার সাথী</p>
+  </footer>
+
+  <script src="datas.js"></script>
+</body>
+</html>

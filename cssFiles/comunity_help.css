@@ -1,0 +1,105 @@
+:root{
+  --bg1: #f6fbff;
+  --bg2: #e8f4ff;
+  --accent: #6aa6ff;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --radius: 14px;
+  --max-width: 1100px;
+  --page-padding: 24px;
+}
+
+
+html,body{height:100%}
+body{
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #e8f4ff;
+  color:#0f172a;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.form-header{
+  background-color:#00a884;
+  color:white;
+  text-align:center;
+  padding:20px 0;
+}
+
+main{
+  width:90%;
+  max-width:700px;
+  margin:25px auto;
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 0 5px gray;
+}
+
+.map-section{
+  margin-top:15px;
+}
+
+label{
+  font-weight:600;
+  font-size:18px;
+}
+
+select{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:16px;
+  background:#f9f9f9;
+}
+
+#showInfoBtn{
+    background-color: #00a884;
+    padding: 10px 20px;
+    color: white;
+    font: 900;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+
+}
+
+.info-box{
+  display:none;
+  margin-top:20px;
+  background:#eefaf3;
+  padding:15px;
+  border-left:5px solid #00a884;
+  border-radius:8px;
+  transition:all 0.3s ease;
+}
+
+.info-box h3{
+  color:#00a884;
+}
+
+.info-box ul{
+  margin:10px 0;
+  padding-left:20px;
+  line-height:1.6;
+}
+
+.contact{
+  background:#fff;
+  border:1px solid #ccc;
+  border-radius:8px;
+  padding:10px;
+  margin-top:10px;
+}
+
+
+@media (max-width:600px){
+  main{
+    margin:15px;
+    padding:15px;
+  }
+}

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>স্বাস্থ্যকর্মী তালিকা</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Bengali', Arial, sans-serif;
+            background: #f5f5f5;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .filter-section h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .filter-group {
+            margin-bottom: 15px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 15px;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            font-family: 'Noto Sans Bengali', Arial, sans-serif;
+            min-height: 44px;
+        }
+
+        .filter-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        /* Worker Cards */
+        .workers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .worker-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 15px;
+        }
+
+        .worker-photo {
+            flex-shrink: 0;
+        }
+
+        .worker-photo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #667eea;
+        }
+
+        .worker-info {
+            flex: 1;
+        }
+
+        .worker-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .worker-name h3 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .voice-btn {
+            background: #667eea;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .voice-btn:active {
+            background: #5568d3;
+        }
+
+        .worker-details {
+            margin-bottom: 12px;
+        }
+
+        .worker-details p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .specialty-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .call-btn {
+            width: 100%;
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            font-family: 'Noto Sans Bengali', Arial, sans-serif;
+        }
+
+        .call-btn:active {
+            background: #45a049;
+        }
+
+        /* Crisis Footer */
+        .crisis-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #d32f2f;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+
+        .crisis-footer p {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .crisis-footer a {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+            color: #666;
+        }
+
+        .no-results p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .offline-indicator {
+            background: #ff9800;
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 13px;
+            display: none;
+        }
+
+        .offline-indicator.show {
+            display: block;
+        }
+
+        @media (max-width: 360px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .worker-card {
+                padding: 15px;
+            }
+            
+            .worker-photo img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-indicator" id="offlineIndicator">
+        📵 অফলাইন মোড - সীমিত তথ্য দেখাচ্ছে
+    </div>
+
+    <div class="header">
+        <h1>🏥 স্বাস্থ্যকর্মী তালিকা</h1>
+        <p>আপনার এলাকার স্বাস্থ্য সেবক খুঁজুন</p>
+    </div>
+
+    <div class="container">
+        <div class="filter-section">
+            <h2>📍 এলাকা নির্বাচন করুন</h2>
+            
+            <div class="filter-group">
+                <label for="division">বিভাগ</label>
+                <select id="division">
+                    <option value="">বিভাগ নির্বাচন করুন</option>
+                    <option value="dhaka">ঢাকা</option>
+                    <option value="chittagong">চট্টগ্রাম</option>
+                    <option value="rajshahi">রাজশাহী</option>
+                    <option value="khulna">খুলনা</option>
+                    <option value="sylhet">সিলেট</option>
+                    <option value="barisal">বরিশাল</option>
+                    <option value="rangpur">রংপুর</option>
+                    <option value="mymensingh">ময়মনসিংহ</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="district">জেলা</label>
+                <select id="district" disabled>
+                    <option value="">আগে বিভাগ নির্বাচন করুন</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="upazila">উপজেলা</label>
+                <select id="upazila" disabled>
+                    <option value="">আগে জেলা নির্বাচন করুন</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="workers-list" id="workersList">
+            <div class="no-results">
+                <p>👆 উপরে থেকে এলাকা নির্বাচন করুন</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="crisis-footer">
+        <p>জরুরি সাহায্য প্রয়োজন?</p>
+        <a href="tel:09678676797">📞 09678-676797 (কান পেতে রই)</a>
+    </div>
+
+    <script>
+        // Location Data
+        const locations = {
+            dhaka: {
+                name: 'ঢাকা',
+                districts: {
+                    dhaka: { name: 'ঢাকা', upazilas: ['সাভার', 'ধামরাই', 'দোহার', 'নবাবগঞ্জ', 'কেরানীগঞ্জ'] },
+                    gazipur: { name: 'গাজীপুর', upazilas: ['কালিগঞ্জ', 'কাপাসিয়া', 'গাজীপুর সদর', 'শ্রীপুর', 'টঙ্গী'] },
+                    narayanganj: { name: 'নারায়ণগঞ্জ', upazilas: ['আড়াইহাজার', 'বন্দর', 'রূপগঞ্জ', 'সোনারগাঁ'] }
+                }
+            },
+            chittagong: {
+                name: 'চট্টগ্রাম',
+                districts: {
+                    chittagong: { name: 'চট্টগ্রাম', upazilas: ['আনোয়ারা', 'বাঁশখালী', 'চন্দনাইশ', 'ফটিকছড়ি', 'হাটহাজারী'] },
+                    coxsbazar: { name: 'কক্সবাজার', upazilas: ['কক্সবাজার সদর', 'চকরিয়া', 'রামু', 'উখিয়া', 'টেকনাফ'] }
+                }
+            }
+        };
+
+        // Health Workers Data
+        const healthWorkers = [
+            {
+                id: 1,
+                name: 'রহিমা খাতুন',
+                photo: 'https://i.pravatar.cc/150?img=5',
+                division: 'dhaka',
+                district: 'dhaka',
+                upazila: 'সাভার',
+                union: 'আশুলিয়া',
+                specialty: 'মা ও শিশু স্বাস্থ্য',
+                phone: '01712345678',
+                available: 'সকাল ৯টা - বিকাল ৫টা',
+                languages: 'বাংলা'
+            },
+            {
+                id: 2,
+                name: 'করিম মিয়া',
+                photo: 'https://i.pravatar.cc/150?img=12',
+                division: 'dhaka',
+                district: 'dhaka',
+                upazila: 'সাভার',
+                union: 'বিরুলিয়া',
+                specialty: 'মানসিক স্বাস্থ্য সহায়তা',
+                phone: '01823456789',
+                available: 'সকাল ১০টা - সন্ধ্যা ৬টা',
+                languages: 'বাংলা'
+            },
+            {
+                id: 3,
+                name: 'সালমা বেগম',
+                photo: 'https://i.pravatar.cc/150?img=9',
+                division: 'dhaka',
+                district: 'gazipur',
+                upazila: 'কালিগঞ্জ',
+                union: 'টুমলিয়া',
+                specialty: 'প্রাথমিক চিকিৎসা',
+                phone: '01934567890',
+                available: 'সারাদিন (জরুরি সময়ে)',
+                languages: 'বাংলা'
+            },
+            {
+                id: 4,
+                name: 'আব্দুল হক',
+                photo: 'https://i.pravatar.cc/150?img=14',
+                division: 'chittagong',
+                district: 'chittagong',
+                upazila: 'আনোয়ারা',
+                union: 'বাটালিয়া',
+                specialty: 'টিকাদান সেবা',
+                phone: '01645678901',
+                available: 'সকাল ৮টা - দুপুর ২টা',
+                languages: 'বাংলা, চাটগাঁইয়া'
+            }
+        ];
+
+        // DOM Elements
+        const divisionSelect = document.getElementById('division');
+        const districtSelect = document.getElementById('district');
+        const upazilaSelect = document.getElementById('upazila');
+        const workersList = document.getElementById('workersList');
+        const offlineIndicator = document.getElementById('offlineIndicator');
+
+        // Check offline/online status
+        function updateOnlineStatus() {
+            if (!navigator.onLine) {
+                offlineIndicator.classList.add('show');
+            } else {
+                offlineIndicator.classList.remove('show');
+            }
+        }
+
+        window.addEventListener('online', updateOnlineStatus);
+        window.addEventListener('offline', updateOnlineStatus);
+        updateOnlineStatus();
+
+        // Save to localStorage for offline access
+        function saveToCache() {
+            localStorage.setItem('healthWorkers', JSON.stringify(healthWorkers));
+            localStorage.setItem('locations', JSON.stringify(locations));
+        }
+
+        // Load from cache if offline
+        function loadFromCache() {
+            const cached = localStorage.getItem('healthWorkers');
+            return cached ? JSON.parse(cached) : healthWorkers;
+        }
+
+        // Initialize cache
+        saveToCache();
+
+        // Division change
+        divisionSelect.addEventListener('change', function() {
+            const selectedDivision = this.value;
+            districtSelect.innerHTML = '<option value="">জেলা নির্বাচন করুন</option>';
+            upazilaSelect.innerHTML = '<option value="">আগে জেলা নির্বাচন করুন</option>';
+            upazilaSelect.disabled = true;
+            
+            if (selectedDivision && locations[selectedDivision]) {
+                districtSelect.disabled = false;
+                const districts = locations[selectedDivision].districts;
+                
+                for (let key in districts) {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = districts[key].name;
+                    districtSelect.appendChild(option);
+                }
+            } else {
+                districtSelect.disabled = true;
+                displayWorkers([]);
+            }
+        });
+
+        // District change
+        districtSelect.addEventListener('change', function() {
+            const selectedDivision = divisionSelect.value;
+            const selectedDistrict = this.value;
+            upazilaSelect.innerHTML = '<option value="">উপজেলা নির্বাচন করুন</option>';
+            
+            if (selectedDistrict && locations[selectedDivision]) {
+                upazilaSelect.disabled = false;
+                const upazilas = locations[selectedDivision].districts[selectedDistrict].upazilas;
+                
+                upazilas.forEach(upazila => {
+                    const option = document.createElement('option');
+                    option.value = upazila;
+                    option.textContent = upazila;
+                    upazilaSelect.appendChild(option);
+                });
+            } else {
+                upazilaSelect.disabled = true;
+                displayWorkers([]);
+            }
+        });
+
+        // Upazila change
+        upazilaSelect.addEventListener('change', function() {
+            filterWorkers();
+        });
+
+        // Filter workers
+        function filterWorkers() {
+            const selectedDivision = divisionSelect.value;
+            const selectedDistrict = districtSelect.value;
+            const selectedUpazila = upazilaSelect.value;
+            
+            const workers = loadFromCache();
+            
+            const filtered = workers.filter(worker => {
+                return worker.division === selectedDivision &&
+                       worker.district === selectedDistrict &&
+                       worker.upazila === selectedUpazila;
+            });
+            
+            displayWorkers(filtered);
+        }
+
+        // Display workers
+        function displayWorkers(workers) {
+            if (workers.length === 0) {
+                workersList.innerHTML = `
+                    <div class="no-results">
+                        <p>😔 এই এলাকায় কোনো স্বাস্থ্যকর্মী পাওয়া যায়নি</p>
+                        <p style="font-size: 14px; margin-top: 10px;">অন্য এলাকা নির্বাচন করুন বা জরুরি নম্বরে যোগাযোগ করুন</p>
+                    </div>
+                `;
+                return;
+            }
+
+            workersList.innerHTML = workers.map(worker => `
+                <div class="worker-card">
+                    <div class="worker-photo">
+                        <img src="${worker.photo}" alt="${worker.name}">
+                    </div>
+                    <div class="worker-info">
+                        <div class="worker-name">
+                            <h3>${worker.name}</h3>
+                            <button class="voice-btn" onclick="speakName('${worker.name}')" title="নাম শুনুন">🔊</button>
+                        </div>
+                        <div class="worker-details">
+                            <p>📍 ${worker.upazila}, ${worker.union}</p>
+                            <p>⏰ ${worker.available}</p>
+                            <span class="specialty-tag">${worker.specialty}</span>
+                        </div>
+                        <button class="call-btn" onclick="makeCall('${worker.phone}')">
+                            📞 কল করুন
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Text-to-Speech for names
+        function speakName(name) {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(name);
+                utterance.lang = 'bn-BD';
+                utterance.rate = 0.8;
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('আপনার ডিভাইসে ভয়েস সাপোর্ট নেই');
+            }
+        }
+
+        // Make call
+        function makeCall(phone) {
+            window.location.href = tel:${phone};
+        }
+
+        // Initial display
+        displayWorkers([]);
+    </script>
+</body>
+</html>

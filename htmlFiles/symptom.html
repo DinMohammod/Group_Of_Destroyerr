@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Awareness Guide - Monobondhu</title>
+    <link rel="stylesheet" href="../cssFiles/symptom.css">
+    <link rel="stylesheet" href="../cssFiles/common.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <h1 class="site-title"><a href="index.html">সেবা</a></h1>
+    </header>
+
+    <main>
+        <div class="form-header">
+            <h1>শারীরিক পরিবর্তন ও লক্ষণ <span class="icon">🔍</span></h1>
+            <p>আপনার প্রাথমিক সমস্যা নির্বাচন করুন এবং সম্ভাব্য লক্ষণ ও পরামর্শ দেখুন।</p>
+        </div>
+
+        <div class="search-section">
+            <label for="symptomSelect">আপনার প্রাথমিক সমস্যা নির্বাচন করুন:</label>
+            <select id="symptomSelect" name="symptom">
+                <option value="">-- সমস্যা সিলেক্ট করুন --</option>
+                <option value="fever">জ্বর</option>
+                <option value="cough">কাশি</option>
+                <option value="stomach">পেটের সমস্যা</option>
+                <option value="headache">মাথাব্যথা</option>
+                <option value="sore_throat">গলা ব্যথা</option>
+                <option value="breathing">শ্বাসকষ্ট</option>
+                <option value="vomit">বমি/উল্টি</option>
+                <option value="diarrhea">ডায়রিয়া</option>
+                <option value="eye">চোখের সমস্যা</option>
+                <option value="rash">ত্বকের র‍্যাশ</option>
+                <option value="fatigue">ক্লান্তি/দুর্বলতা</option>
+                <option value="joint_pain">জয়েন্টে ব্যথা</option>
+            </select>
+
+            <button id="checkBtn">Check</button>
+        </div>
+
+        <div id="resultSection" class="result-section" style="display: none;">
+            <h3>সম্ভাব্য লক্ষণ এবং পরামর্শ</h3>
+            <div id="symptomsList"></div>
+            <p class="disclaimer">ডিসক্লেইমার: এটা শুধু সাধারণ তথ্য। মেডিক্যাল অ্যাডভাইসের জন্য ডাক্তার দেখান।</p>
+        </div>
+
+        <div id="notification" class="notification"></div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> সেবা— তোমার সাথী</p>
+    </footer>
+
+    <script src="symptom.js"></script>
+</body>
+
+</html>

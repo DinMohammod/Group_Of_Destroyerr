@@ -1,0 +1,38 @@
+.site-footer{
+  width:100%;
+  max-width:var(--max-width);
+  margin-top:36px;
+  padding:18px var(--page-padding);
+  display:flex;
+  justify-content:center;
+  color:var(--muted);
+  font-size:14px;
+}
+
+
+.site-header{
+  width:100%;
+  /* max-width:var(--max-width); */
+  display:flex;
+  justify-content:center;
+  /* padding:5px var(--page-padding); */
+}
+
+.site-title{
+  font-size: clamp(28px, 6vw, 44px);
+  background: linear-gradient(90deg, #0f172a, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight:700;
+}
+
+.site-title a {
+  text-decoration: none;
+  font-size: clamp(28px, 6vw, 44px);
+  background: linear-gradient(90deg, #0f172a, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}

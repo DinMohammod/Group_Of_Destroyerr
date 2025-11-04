@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Health Map - Monobondhu</title>
+  <link rel="stylesheet" href="../cssFiles/comunity_help.css">
+  <link rel="stylesheet" href="../cssFiles/common.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+    <h1 class="site-title"><a href="index.html">সেবা</a></h1>
+  </header>
+
+  <main>
+    <div class="form-header">
+      <h1>কমিউনিটি হেলথ ম্যাপ 🩺</h1>
+      <p>আপনার সমস্যাটি নির্বাচন করুন এবং প্রাথমিক পদক্ষেপ ও নিকটস্থ সাহায্য দেখুন।</p>
+    </div>
+
+    <section class="map-section">
+      <label for="problemSelect">আপনার সমস্যা নির্বাচন করুন:</label>
+      <select id="problemSelect">
+        <option value="">-- নির্বাচন করুন --</option>
+        <option value="fever">জ্বর</option>
+        <option value="cut">কাটা বা রক্তপাত</option>
+        <option value="anxiety">মানসিক চাপ / দুশ্চিন্তা</option>
+        <option value="burn">পোড়া</option>
+        <option value="headache">মাথাব্যথা</option>
+        <option value="cold">ঠান্ডা ও সর্দি</option>
+        <option value="stomachache">পেট ব্যথা</option>
+        <option value="diarrhea">ডায়রিয়া</option>
+        <option value="vomiting">বমি</option>
+        <option value="chestPain">বুকে ব্যথা</option>
+        <option value="allergy">অ্যালার্জি</option>
+        <option value="coldFever">সর্দি ও জ্বর</option>
+        <option value="toothache">দাঁতের ব্যথা</option>
+        <option value="sprain">মোচড়/চোট</option>
+        <option value="fracture">হাড় ভাঙা</option>
+        <option value="skinRash">ত্বকের দাগ/চুলকানি</option>
+        <option value="eyePain">চোখ ব্যথা</option>
+        <option value="earPain">কানের ব্যথা</option>
+        <option value="fatigue">অতিরিক্ত ক্লান্তি</option>
+        <option value="coldSore">ঠোঁটের ফোসকা</option>
+      </select>
+
+      <button id="showInfoBtn">সমাধান দেখুন</button>
+
+      <div id="infoBox" class="info-box"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> সেবা — তোমার সাথী</p>
+  </footer>
+
+  <script src="common.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anonymous Health Request - Monobondhu</title>
+  <link rel="stylesheet" href="../cssFiles/anonymous.css">
+  <link rel="stylesheet" href="../cssFiles/common.css">
+</head>
+<body>
+
+  
+  <header class="site-header">
+    <h1 class="site-title"><a href="index.html">সেবা</a></h1>
+  </header>
+
+  <main>
+    <div class="form-header">
+      <h1>গোপনীয় স্বাস্থ্য সহায়তা</h1>
+      <p>নাম না বলেই আপনার সমস্যা আমাদের জানান।</p>
+    </div>
+
+    <form id="anonForm">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" placeholder="আপনার সমস্যা সংক্ষেপে লিখুন..." required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="6" placeholder="আপনার বিস্তারিত সমস্যা লিখুন..." required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <div id="notification" class="notification"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> সেবা— তোমার সাথী</p>
+  </footer>
+
+  <script src="annon.js"></script>
+</body>
+</html>

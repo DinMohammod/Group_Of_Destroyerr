@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer Health Worker - Monobondhu</title>
+  <link rel="stylesheet" href="../cssFiles/volunteer.css">
+  <link rel="stylesheet" href="../cssFiles/common.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-title"><a href="index.html">সেবা</a></h1>
+  </header>
+
+  <main>
+    <div class="form-header">
+      <h1>স্বাস্থ্যকর্মী </h1>
+      <p>স্বেচ্ছাসেবক স্বাস্থ্যকর্মীদের পরিচয় ও যোগাযোগ। আপনার জেলা সিলেক্ট করে খুঁজুন।</p>
+    </div>
+
+    
+    <div class="filter-section">
+      <label for="districtSelect">জেলা নির্বাচন করুন:</label>
+      <select id="districtSelect">
+        <option value="all">সব জেলা</option>
+        <option value="dhaka">ঢাকা</option>
+        <option value="chittagong">চট্টগ্রাম</option>
+        <option value="rajshahi">রাজশাহী</option>
+        <option value="khulna">খুলনা</option>
+        <option value="barisal">বরিশাল</option>
+        <option value="sylhet">সিলেট</option>
+        <option value="rangpur">রংপুর</option>
+        <option value="mymensingh">ময়মনসিংহ</option>
+      </select>
+    </div>
+
+    <div class="volunteers-grid" id="volunteersGrid">
+      
+      <div class="vol-card" data-district="dhaka" data-online="true">
+        <h3>ডা. রহিমা খাতুন</h3>
+        <p><strong>পেশা:</strong> ডাক্তার</p>
+        <p><strong>জেলা:</strong> ঢাকা</p>
+        <p><strong>ইমেইল:</strong> rahima@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="rajshahi" data-online="false">
+        <h3>সাইফুল ইসলাম</h3>
+        <p><strong>পেশা:</strong> স্বাস্থ্যকর্মী</p>
+        <p><strong>জেলা:</strong> রাজশাহী</p>
+        <p><strong>ইমেইল:</strong> saiful@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="khulna" data-online="true">
+        <h3>নীলিমা আক্তার</h3>
+        <p><strong>পেশা:</strong> নার্স</p>
+        <p><strong>জেলা:</strong> খুলনা</p>
+        <p><strong>ইমেইল:</strong> nilima@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="barisal" data-online="false">
+        <h3>করিম উল্লাহ</h3>
+        <p><strong>পেশা:</strong> প্যারামেডিক</p>
+        <p><strong>জেলা:</strong> বরিশাল</p>
+        <p><strong>ইমেইল:</strong> karim@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="sylhet" data-online="true">
+        <h3>প্রিয়া সেন</h3>
+        <p><strong>পেশা:</strong> সামাজিক কর্মী</p>
+        <p><strong>জেলা:</strong> সিলেট</p>
+        <p><strong>ইমেইল:</strong> priya@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="rangpur" data-online="false">
+        <h3>ফাতেমা খাতুন</h3>
+        <p><strong>পেশা:</strong> নার্স</p>
+        <p><strong>জেলা:</strong> রংপুর</p>
+        <p><strong>ইমেইল:</strong> fatema@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="mymensingh" data-online="true">
+        <h3>শফিকুল ইসলাম</h3>
+        <p><strong>পেশা:</strong> স্বাস্থ্যকর্মী</p>
+        <p><strong>জেলা:</strong> ময়মনসিংহ</p>
+        <p><strong>ইমেইল:</strong> shafiq@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="chittagong" data-online="false">
+        <h3>তানভীর আহমেদ</h3>
+        <p><strong>পেশা:</strong> ডাক্তার</p>
+        <p><strong>জেলা:</strong> চট্টগ্রাম</p>
+        <p><strong>ইমেইল:</strong> tanvir@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="dhaka" data-online="false">
+        <h3>লিপি সরকার</h3>
+        <p><strong>পেশা:</strong> প্যারামেডিক</p>
+        <p><strong>জেলা:</strong> ঢাকা</p>
+        <p><strong>ইমেইল:</strong> lipi@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="rajshahi" data-online="true">
+        <h3>সুমি আক্তার</h3>
+        <p><strong>পেশা:</strong> নার্স</p>
+        <p><strong>জেলা:</strong> রাজশাহী</p>
+        <p><strong>ইমেইল:</strong> sumi@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+    
+      <div class="vol-card" data-district="khulna" data-online="true">
+        <h3>আব্দুল করিম</h3>
+        <p><strong>পেশা:</strong> স্বাস্থ্যকর্মী</p>
+        <p><strong>জেলা:</strong> খুলনা</p>
+        <p><strong>ইমেইল:</strong> abdul@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="barisal" data-online="false">
+        <h3>রহিমা বেগম</h3>
+        <p><strong>পেশা:</strong> নার্স</p>
+        <p><strong>জেলা:</strong> বরিশাল</p>
+        <p><strong>ইমেইল:</strong> rahima2@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="sylhet" data-online="true">
+        <h3>জাহিদ হাসান</h3>
+        <p><strong>পেশা:</strong> ডাক্তার</p>
+        <p><strong>জেলা:</strong> সিলেট</p>
+        <p><strong>ইমেইল:</strong> zahid@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="rangpur" data-online="false">
+        <h3>মিতা রানী</h3>
+        <p><strong>পেশা:</strong> প্যারামেডিক</p>
+        <p><strong>জেলা:</strong> রংপুর</p>
+        <p><strong>ইমেইল:</strong> mita@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="mymensingh" data-online="true">
+        <h3>ফরিদ আহমেদ</h3>
+        <p><strong>পেশা:</strong> স্বাস্থ্যকর্মী</p>
+        <p><strong>জেলা:</strong> ময়মনসিংহ</p>
+        <p><strong>ইমেইল:</strong> farid@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="chittagong" data-online="false">
+        <h3>সালমা বেগম</h3>
+        <p><strong>পেশা:</strong> নার্স</p>
+        <p><strong>জেলা:</strong> চট্টগ্রাম</p>
+        <p><strong>ইমেইল:</strong> salma@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="dhaka" data-online="true">
+        <h3>আলী হোসেন</h3>
+        <p><strong>পেশা:</strong> ডাক্তার</p>
+        <p><strong>জেলা:</strong> ঢাকা</p>
+        <p><strong>ইমেইল:</strong> ali@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="rajshahi" data-online="false">
+        <h3>রিনা আক্তার</h3>
+        <p><strong>পেশা:</strong> সামাজিক কর্মী</p>
+        <p><strong>জেলা:</strong> রাজশাহী</p>
+        <p><strong>ইমেইল:</strong> rina@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="khulna" data-online="true">
+        <h3>মোঃ সোহেল</h3>
+        <p><strong>পেশা:</strong> প্যারামেডিক</p>
+        <p><strong>জেলা:</strong> খুলনা</p>
+        <p><strong>ইমেইল:</strong> sohel@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+
+      <div class="vol-card" data-district="barisal" data-online="false">
+        <h3>নাজমা বেগম</h3>
+        <p><strong>পেশা:</strong> নার্স</p>
+        <p><strong>জেলা:</strong> বরিশাল</p>
+        <p><strong>ইমেইল:</strong> nazma@example.com</p>
+        <div class="contact-info"></div>
+        
+      </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> সেবা— তোমার সাথী</p>
+  </footer>
+
+  <script src="volunteer.js"></script>
+</body>
+</html>

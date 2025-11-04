@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maternal and Child Health Tracker - Monobondhu</title>
+  <link rel="stylesheet" href="../cssFiles/maternal.css">
+  <link rel="stylesheet" href="../cssFiles/common.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="site-title"><a href="index.html">সেবা</a></h1>
+  </header>
+
+  <main>
+    <div class="form-header">
+      <h1>মা ও শিশু </h1>
+      <p>মাতৃত্বকালীন এবং শিশুর স্বাস্থ্য পরামর্শ। নিচের টপিকগুলো ক্লিক করে বিস্তারিত দেখুন।</p>
+    </div>
+
+    <div class="accordion-container">
+      <button class="accordion">কখন কি চেকআপ করতে হবে?</button>
+      <div class="panel">
+        <p>প্রথম ত্রৈমাসিক (১-১২ সপ্তাহ): প্রেগন্যান্সি কনফার্মেশন, আল্ট্রাসাউন্ড, রক্ত পরীক্ষা।</p>
+        <p>দ্বিতীয় ত্রৈমাসিক (১৩-২৬ সপ্তাহ): অ্যানোমালি স্ক্যান, গ্লুকোজ টেস্ট।</p>
+        <p>তৃতীয় ত্রৈমাসিক (২৭-৪০ সপ্তাহ): রুটিন চেকআপ, ফেটাল মনিটরিং। প্রতি মাসে অন্তত একবার ডাক্তার দেখান।</p>
+      </div>
+
+      <button class="accordion">কি কি খাবার খেতে হবে?</button>
+      <div class="panel">
+        <p>পুষ্টিকর খাবার: ফল (আপেল, কলা), সবজি (পালং শাক, গাজর), প্রোটিন (মাছ, ডিম, ডাল), ক্যালসিয়াম (দুধ, দই)।</p>
+        <p>প্রতিদিন ২৫০০-৩০০০ ক্যালরি, আয়রন এবং ফলিক অ্যাসিড সমৃদ্ধ খাবার খান। চা-কফি কমান।</p>
+      </div>
+
+      <button class="accordion">কি কি ইমার্জেন্সি তৈরি হতে পারে?</button>
+      <div class="panel">
+        <p>সম্ভাব্য সমস্যা: অতিরিক্ত বমি, রক্তপাত, উচ্চ রক্তচাপ (প্রি-এক্ল্যাম্পসিয়া), প্রিটার্ম লেবার।</p>
+        <p>শিশুর জন্য: লো বার্থ ওয়েট, ইনফেকশন।</p>
+      </div>
+
+      <button class="accordion">ইমার্জেন্সি মুহূর্তে কি করতে হবে?</button>
+      <div class="panel">
+        <p>রক্তপাত বা তীব্র ব্যথা হলে তাৎক্ষণিক হাসপাতাল যান।</p>
+        <p>ডাক্তারের নম্বর হাতের কাছে রাখুন, অ্যাম্বুলেন্স কল করুন (৯৯৯)। শান্ত থেকে শ্বাস-প্রশ্বাস অনুশীলন করুন।</p>
+      </div>
+
+      <button class="accordion">ভ্যাকসিনেশন শিডিউল</button>
+      <div class="panel">
+        <p>মায়ের জন্য: টিটি ভ্যাকসিন (২ ডোজ), ফ্লু ভ্যাকসিন।</p>
+        <p>শিশুর জন্য: জন্মের পর BCG, Hepatitis B; ৬ সপ্তাহে DPT, Polio ইত্যাদি। সরকারি শিডিউল ফলো করুন।</p>
+      </div>
+
+      <button class="accordion">এক্সারসাইজ টিপস</button>
+      <div class="panel">
+        <p>হালকা হাঁটা, যোগা (প্রেনাটাল), সুইমিং। দিনে ৩০ মিনিট, কিন্তু ডাক্তারের পরামর্শ নিন। ভারী কাজ এড়ান।</p>
+      </div>
+
+      <button class="accordion">পোস্ট-ডেলিভারি কেয়ার</button>
+      <div class="panel">
+        <p>রেস্ট নিন, পুষ্টিকর খান, স্তনপান করান। মেনটাল হেলথ চেক করুন, পোস্টপার্টাম ডিপ্রেশনের লক্ষণ দেখুন।</p>
+      </div>
+
+      <button class="accordion">শিশুর নিউট্রিশন</button>
+      <div class="panel">
+        <p>প্রথম ৬ মাস: শুধু মায়ের দুধ। তারপর কমপ্লিমেন্টারি ফুড (খিচুড়ি, ফলের পিউরি)। ভিটামিন D সাপ্লিমেন্ট দিন।</p>
+      </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> সেবা — তোমার সাথী</p>
+  </footer>
+
+  <script src="maternal.js"></script>
+</body>
+</html>
